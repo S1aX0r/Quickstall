@@ -1,0 +1,65 @@
+#!/bin/bash
+
+# It's recommended that 40gb of space is needed for the installation of tools.
+
+echo "Welcome to quickstall. An installer for a small set of pen-testing tools without any of the hassle."
+
+echo
+
+echo "Please insert root password or switch to root account and run script"
+
+read -s rootpw
+
+echo "UPDATING"
+
+echo "INSTALLING GIT"
+
+echo "$rootpw" | sudo -S apt install git -y
+
+echo "$rootpw" | sudo -S apt update -y
+
+echo "INSTALLING NMAP"
+
+echo "$rootpw" | sudo -S apt install nmap -y
+
+echo "INSTALLING JOHN THE RIPPER"
+
+echo "$rootpw" | sudo -S apt install john -y
+
+echo "INSTALLING WIFITE"
+
+echo "$rootpw" | sudo -S apt install wifite -y
+
+echo "INSTALLING TCPDUMP"
+
+echo "$rootpw" | sudo -S apt install tcpdump -y
+
+echo "INSTALLING METASPLOIT FRAMEWORK"
+
+echo "$rootpw" | sudo -S apt install curl wget gnupg2 -y
+
+curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall
+
+chmod +x msfinstall
+
+./msfinstall
+
+echo "INSTALLING BURPSUITE"
+
+echo "$rootpw" | sudo -S apt install burp -y
+
+echo "INSTALLING PROXYCHAINS"
+
+echo "$rootpw" | sudo -S apt install proxychains4 -y
+
+echo "INSTALLING MACCHANGER"
+
+echo "$rootpw" | sudo -S apt install macchanger -y
+
+echo "INSTALLING NIKTO"
+
+echo "$rootpw" | sudo -S apt install nikto -y
+
+echo "INSTALLING RECON-NG"
+
+echo "$rootpw" | sudo -S apt install recon-ng -y
