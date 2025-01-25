@@ -12,11 +12,11 @@ read -s rootpw
 
 echo "UPDATING"
 
+echo "$rootpw" | sudo -S apt update -y
+
 echo "INSTALLING GIT"
 
 echo "$rootpw" | sudo -S apt install git -y
-
-echo "$rootpw" | sudo -S apt update -y
 
 echo "INSTALLING NMAP"
 
@@ -44,9 +44,9 @@ chmod +x msfinstall
 
 ./msfinstall
 
-echo "INSTALLING BURPSUITE"
+echo "INSTALLING ARJUN"
 
-echo "$rootpw" | sudo -S apt install burp -y
+echo "$rootpw" | sudo -S apt install arjun -y
 
 echo "INSTALLING PROXYCHAINS"
 
@@ -56,9 +56,9 @@ echo "INSTALLING MACCHANGER"
 
 echo "$rootpw" | sudo -S apt install macchanger -y
 
-echo "INSTALLING NIKTO"
+echo "INSTALLING WAPITI"
 
-echo "$rootpw" | sudo -S apt install nikto -y
+echo "$rootpw" | sudo -S apt install wapiti -y
 
 echo "INSTALLING RECON-NG"
 
