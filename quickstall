@@ -2,7 +2,7 @@
 
 # It's recommended that 40gb of space is needed for the installation of tools.
 
-echo "Welcome to quickstall. An installer for a small set of pen-testing tools without any of the hassle."
+echo "Welcome to Quickstall. An installer for a small set of pen-testing tools without any of the hassle."
 
 echo
 
@@ -13,10 +13,6 @@ read -s rootpw
 echo "UPDATING"
 
 echo "$rootpw" | sudo -S apt update -y
-
-echo "INSTALLING GIT"
-
-echo "$rootpw" | sudo -S apt install git -y
 
 echo "INSTALLING NMAP"
 
